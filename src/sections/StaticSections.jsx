@@ -379,7 +379,7 @@ export const TestimonialsSection = () => (
 		</div>
 		<div className="relative w-full">
 			<div className="carousel overflow-hidden">
-				<div className="carousel-track flex gap-6 px-6">
+				<div className="carousel-track flex gap-4 md:gap-6 px-4 md:px-6">
 					{[...transformationCases, ...transformationCases].map(
 						(data, index) => (
 							<div
