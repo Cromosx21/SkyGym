@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* Estilo base para el contorno de texto, usado en la sección Hero */
+@layer utilities {
+	.text-outline {
+		/* El color de la sombra se define en tailwind.config.js */
+		-webkit-text-stroke: 1px #ffd700;
+		color: #0a0a0a;
+	}
+}
+
+@keyframes marquee-left {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+.marquee {
+	display: inline-flex;
+	will-change: transform;
+	animation: marquee-left 30s linear infinite;
+}
+
+@keyframes carousel-left {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+.carousel-track {
+	display: inline-flex;
+	will-change: transform;
+	animation: carousel-left 45s linear infinite;
+}
+
+.carousel:hover .carousel-track {
+	animation-play-state: paused;
+}
+
+.carousel-edge-left,
+.carousel-edge-right {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 80px;
+	pointer-events: none;
+}
+
+.carousel-edge-left {
+	left: 0;
+	background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.carousel-edge-right {
+	right: 0;
+	background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+/* Mobile layout for testimonials: show 1 card centered with hint edges */
+@media (max-width: 768px) {
+	.carousel {
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+	}
+	.carousel-track {
+		animation: none;
+	}
+	.carousel .slide-item {
+		scroll-snap-align: center;
+		flex: 0 0 85%;
+		max-width: 85%;
+	}
+}
