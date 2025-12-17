@@ -28,7 +28,7 @@ const App = () => {
 
 			<div className="fixed bottom-6 right-6 z-50">
 				<a
-					href="https://wa.me/51940245 04"
+					href="https://wa.me/+51969673200"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition inline-flex items-center justify-center"

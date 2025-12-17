@@ -40,7 +40,7 @@ html {
 .carousel-track {
 	display: inline-flex;
 	will-change: transform;
-	animation: carousel-left 45s linear infinite;
+	animation: carousel-left 50s linear infinite;
 }
 
 .carousel:hover .carousel-track {
@@ -81,6 +81,7 @@ html {
 	.carousel-track {
 		animation: none;
 		gap: 1rem;
+		width: 100%;
 	}
 	.carousel .slide-item {
 		scroll-snap-align: center;

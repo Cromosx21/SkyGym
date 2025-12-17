@@ -114,7 +114,7 @@ export const ServicesSection = () => (
 		<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 			<div className="bg-[#111] border border-white/10 rounded-xl p-6 hover:shadow-xl hover:shadow-[#FFD700]/10 transition">
 				<div className="flex items-center gap-3 mb-4">
-					<Trophy className="text-[#FFD700]" size={28} />
+					<Trophy className="text-[#FFD700]" size={40} />
 					<h4 className="text-xl font-black uppercase">
 						Entrenamiento Personal
 					</h4>
@@ -136,7 +136,7 @@ export const ServicesSection = () => (
 			</div>
 			<div className="bg-[#111] border border-white/10 rounded-xl p-6 hover:shadow-xl hover:shadow-[#FFD700]/10 transition">
 				<div className="flex items-center gap-3 mb-4">
-					<ShieldCheck className="text-[#FFD700]" size={28} />
+					<ShieldCheck className="text-[#FFD700]" size={48} />
 					<h4 className="text-xl font-black uppercase">
 						Asesoramiento Nutricional
 					</h4>
@@ -180,7 +180,7 @@ export const ServicesSection = () => (
 			</div>
 			<div className="bg-[#111] border border-white/10 rounded-xl p-6 hover:shadow-xl hover:shadow-[#FFD700]/10 transition">
 				<div className="flex items-center gap-3 mb-4">
-					<Dumbbell className="text-[#FFD700]" size={28} />
+					<Dumbbell className="text-[#FFD700]" size={40} />
 					<h4 className="text-xl font-black uppercase">
 						Musculación & Peso Libre
 					</h4>
@@ -396,9 +396,10 @@ export const TestimonialsSection = () => (
 			<div className="carousel-edge-right"></div>
 		</div>
 		<div className="mt-12 flex justify-center">
-			<button className="bg-transparent text-[#FFD700] border border-[#FFD700] px-8 py-3 font-bold uppercase hover:bg-[#FFD700] hover:text-black transition rounded-md">
+			<a
+				className="bg-transparent text-[#FFD700] border border-[#FFD700] px-8 py-3 font-bold uppercase hover:bg-[#FFD700] hover:text-black transition rounded-md cursor-pointer" href="https://www.facebook.com/profile.php?id=100088164775207&sk=reviews" target="_blank" rel="noopener noreferrer" >
 				Ver Más Historias
-			</button>
+			</a>
 		</div>
 	</section>
 );
@@ -446,7 +447,7 @@ export const PricingSection = () => (
 
 				{/* Tarjeta Premium - Destacada (Dorado) */}
 				<div className="bg-[#FFD700] text-black p-10 rounded-xl shadow-2xl scale-[1.05] relative transform border-4 border-yellow-300">
-					<div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white px-3 py-1 text-xs font-black uppercase rounded-full tracking-wider">
+					<div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-white px-10 py-2 text-xs font-black uppercase rounded-full tracking-wider">
 						Más Popular
 					</div>
 					<h4 className="text-2xl font-black uppercase italic mb-4">
@@ -477,7 +478,7 @@ export const PricingSection = () => (
 							Plan Nutricional Básico
 						</li>
 					</ul>
-					<button className="w-full py-3 bg-black text-[#FFD700] font-black uppercase hover:bg-gray-800 transition rounded-md">
+					<button className="w-full py-3 bg-black text-[#FFD700] font-black uppercase hover:bg-gray-800 transition rounded-md cursor-pointer">
 						¡COMENZAR HOY!
 					</button>
 				</div>
@@ -512,7 +513,7 @@ export const PricingSection = () => (
 							Regalo Exclusivo
 						</li>
 					</ul>
-					<button className="w-full py-3 border-2 border-[#FFD700] text-[#FFD700] font-bold uppercase hover:bg-[#FFD700] hover:text-black transition rounded-md">
+					<button className="w-full py-3 border-2 border-[#FFD700] text-[#FFD700] font-bold uppercase hover:bg-[#FFD700] hover:text-black transition rounded-md cursor-pointer">
 						Aprovechar
 					</button>
 				</div>

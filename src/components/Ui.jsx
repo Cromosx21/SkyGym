@@ -17,7 +17,7 @@ import {
 
 // Componente de Tarjeta de Testimonio
 export const TestimonialCard = ({ data }) => (
-	<div className="bg-[#1a1a1a] p-6 rounded-xl shadow-2xl flex flex-col items-center border border-white/10 hover:border-[#FFD700] transition-all duration-300">
+	<div className="bg-[#1a1a1a] p-6 rounded-xl shadow-2xl flex flex-col items-center border border-white/10 hover:border-[#FFD700] transition-all duration-300 w-full md:w-auto">
 		<div className="grid grid-cols-2 gap-4 w-full mb-6">
 			<div className="relative">
 				<img
