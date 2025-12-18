@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { planesDetails } from "../data/data.jsx"; // Extensión .js agregada
 
+// Comprueba si la variable de entorno está presente (no muestra el valor)
+// console.log(Boolean(import.meta.env.VITE_API_KEY_GEMINI) ? 'VITE_API_KEY_GEMINI configurada' : 'VITE_API_KEY_GEMINI ausente');
+
 // Componente para la sección de Contacto (contiene la lógica de la IA)
 export const ContactSection = () => {
 	// Estado para la funcionalidad de IA
@@ -13,6 +16,7 @@ export const ContactSection = () => {
 	/**
 	 * Llama a la API de Gemini para obtener una recomendación de plan basada en el objetivo del usuario.
 	 */
+
 	const handleGoalRecommendation = async () => {
 		if (!goal.trim()) {
 			setError("Por favor, describe tu objetivo fitness.");
@@ -29,8 +33,10 @@ export const ContactSection = () => {
 			"Actúa como un Asesor Fitness experto y altamente motivador del gimnasio SKY GYM. Analiza el objetivo del usuario y recomienda el plan más adecuado (INICIO, ORO ELITE o ANUAL) y un breve mensaje motivacional. Responde completamente en español y de forma persuasiva.";
 
 		// La clave API y la URL del modelo
-		const apiKey = "AIzaSyAZ5z_DZKK163qg3rWzEDi0ExfhXPddZPI";
-		const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+		const apiKey = import.meta.env.VITE_API_KEY_GEMINI ?? null;
+		const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${encodeURIComponent(
+			apiKey
+		)}`;
 
 		const payload = {
 			contents: [{ parts: [{ text: userQuery }] }],

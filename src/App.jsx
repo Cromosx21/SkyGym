@@ -1,4 +1,3 @@
-import React from "react";
 import { MessageCircle } from "lucide-react";
 import { Navbar, Footer } from "./components/Ui.jsx"; // Extensión .jsx agregada
 import {
