@@ -29,7 +29,7 @@ export const ContactSection = () => {
 			"Actúa como un Asesor Fitness experto y altamente motivador del gimnasio SKY GYM. Analiza el objetivo del usuario y recomienda el plan más adecuado (INICIO, ORO ELITE o ANUAL) y un breve mensaje motivacional. Responde completamente en español y de forma persuasiva.";
 
 		// La clave API y la URL del modelo
-		const apiKey = "";
+		const apiKey = "AIzaSyAZ5z_DZKK163qg3rWzEDi0ExfhXPddZPI";
 		const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
 		const payload = {
