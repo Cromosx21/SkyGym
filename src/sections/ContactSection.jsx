@@ -32,24 +32,25 @@ export const ContactSection = () => {
 		const systemPrompt =
 			"Actúa como un Asesor Fitness experto y altamente motivador del gimnasio SKY GYM. Analiza el objetivo del usuario y recomienda el plan más adecuado (INICIO, ORO ELITE o ANUAL) y un breve mensaje motivacional. Responde completamente en español y de forma persuasiva.";
 
-		// La clave API y la URL del modelo
-		const apiKey = import.meta.env.VITE_API_KEY_GEMINI ?? null;
+		const apiKey = import.meta.env.VITE_API_KEY_GEMINI?.trim() || null;
+		if (!apiKey) {
+			setError("API key de Gemini no configurada.");
+			setIsLoading(false);
+			return;
+		}
 		const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${encodeURIComponent(
 			apiKey
 		)}`;
 
 		const payload = {
-			contents: [{ parts: [{ text: userQuery }] }],
-			systemInstruction: {
+			contents: [{ role: "user", parts: [{ text: userQuery }] }],
+			system_instruction: {
 				parts: [{ text: systemPrompt }],
 			},
 		};
 
 		let response;
 		try {
-			if (!apiKey) {
-				throw new Error("API key de Gemini no configurada.");
-			}
 			let maxRetries = 3;
 			for (let attempt = 0; attempt < maxRetries; attempt++) {
 				response = await fetch(apiUrl, {
